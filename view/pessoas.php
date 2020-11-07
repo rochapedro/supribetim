@@ -29,6 +29,10 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
         margin-bottom: 10px;
       }
 
+      table.dataTable td {
+        word-break: break-word;
+      }
+
     @media only screen and (max-width: 1000px) {
       .novo {
         margin-bottom: 0px;
@@ -49,14 +53,14 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
           <div class="col-md-12 novo">      
             <a href="cadastro.php"><button style="float: right; margin-right:3px" type="button" class="btn btn-primary">Novo</button></a>
           </div>
-          <div class="col-md-12">
-            <table id="tablePessoas" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%">
+          <div class="col-md-12 table-responsive">
+            <table id="tablePessoas" cellspacing="0" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%;">
               <thead>
                 <tr>
-                    <th style="width: 20px;">Nome</th>
+                    <th>Nome</th>
                     <th>Endereço</th>
                     <th>Telefone</th>
-                    <th>Data</th>
+                    <th>Comum</th>
                     <th></th>
                 </tr>
               </thead>
@@ -118,7 +122,7 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
               buttons: [ 'excel', 'pdf' ],
               "language": {
                 "lengthMenu": "Mostrar _MENU_ ",
-                "zeroRecords": "Desculpe, nenhum registro foi encontrado",
+                "zeroRecords": "Nenhum registro foi encontrado",
                 "info": "<b>Total de _TOTAL_ registros</b>",
                 "infoEmpty": "",
                 "infoFiltered": "<i>(filtrado de um total de _MAX_ registros)</i>",
@@ -136,7 +140,7 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
           } );
       
           table.buttons().container()
-              .appendTo( '#tablePessoas_wrapper .col-md-6:eq(0)' );
+              .appendTo( '#tablePessoas .col-md-6:eq(0)' );
       } );
 
       // Função de deletar pessoas via ajax

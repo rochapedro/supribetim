@@ -40,7 +40,7 @@ class PessoasController {
                     <td>'.$row->rua.' - n°'.$row->numero.' - '.$row->bairro.' - '.$row->cidade.'</td>
                     <td>'.$row->telefone.'</td>
                     <td>'.$row->casa_oracao.'</td>
-                    <td width="5%">
+                    <td>
                     <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-backdrop="false" data-target="#editPessoas"
                     data-whatever="'.$row->id_pessoa.'" 
                     data-whatevernome="'.$row->nome.'"

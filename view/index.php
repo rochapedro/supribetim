@@ -103,7 +103,7 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
             <a style="float: right;" class="rounded js-scroll-trigger botao" href="cadastro.php"><button type="button" class="btn btn-warning">Cadastrar</button></a></li>       
             <button style="float: right; margin-right:2px" type="button" class="btn btn-primary botao" data-toggle="modal" data-target="#cadRegistro">Novo</button>
           </div>
-          <div class="col-md-12" style="margin-top: 10px;">
+          <div class="col-md-12 table-responsive" style="margin-top: 10px;">
             <table id="tableRegistros" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%">
               <thead>
                 <tr>
