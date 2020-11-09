@@ -25,8 +25,8 @@
               </div>
           </div>
           <div class="form-group col-md-12">
-            <button style="float: right; margin-left: 8px;" type="submit" class="btn btn-primary">Editar</button>
-            <button style="float: right;" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+            <button style="float: right; margin-left: 8px;" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+            <button style="float: right;" type="submit" class="btn btn-primary" onclick="return validarRegistro_edit()">Editar</button>
           </div>
         </form>
       </div>

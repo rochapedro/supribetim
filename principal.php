@@ -7,7 +7,6 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
   require_once ('app/session.php');
   require_once ('app/scripts.php');
   require_once ($_SESSION['REGISTRO_URL_CONTROLLERS'].'Menu_Controller.php');
-  
 ?>
 
 <!doctype html>

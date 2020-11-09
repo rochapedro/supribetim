@@ -70,7 +70,7 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
               </div><!-- /form row -->
               <div class="col-md-12">
                 <button style="float: right;" type="submit" class="btn btn-danger">Cancelar</button>
-                <button style="padding-right: 30px; padding-left: 30px; float:right; margin-right:5px;" type="submit" class="btn btn-primary">Cadastrar</button>
+                <button style="padding-right: 30px; padding-left: 30px; float:right; margin-right:5px;" type="submit" onclick="return validar()" class="btn btn-primary">Cadastrar</button>
               </div>
             </form>
         </div><!-- /panel body -->
@@ -88,6 +88,24 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <script type="text/javascript">
+    //Funçao pra validar os formulários
+      function validar(){
+				var nome = cadastrar.nome.value;
+				var id_casa = cadastrar.id_casa.value;
+				
+				if(nome == ""){
+					alert('Preencha o campo nome.');
+					cadastrar.nome.focus();
+					return false;
+				}
+				
+				if(id_casa == ""){
+					alert('Preencha o campo comum.');
+					cadastrar.id_casa.focus();
+					return false;
+				}
+			}
+
       // Máscara de telefone do Jquery
       $('.telefone').mask('(00) 0000-00009');
       $('.telefone').blur(function(event) {

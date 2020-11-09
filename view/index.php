@@ -138,8 +138,43 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
   
   <!-- Importando o js do bootstrap -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+    
     <script type="text/javascript">
+      // Funçao para validar os formulários
+      function validarRegistro(){
+        var id_pessoa = cadastrarRegistro.id_pessoa.value;
+        var temperatura = cadastrarRegistro.temperatura.value;
+        
+        if(id_pessoa == ""){
+          alert('Preencha o campo pessoa.');
+          cadastrarRegistro.id_pessoa.focus();
+          return false;
+        }
+        
+        if(temperatura == ""){
+          alert('Preencha o campo temperatura.');
+          cadastrarRegistro.temperatura.focus();
+          return false;
+        }
+      }
+
+      function validarRegistro_edit(){
+        var id_pessoa_edit = editarRegistro.id_pessoa_edit.value;
+        var temperatura_edit = editarRegistro.temperatura_edit.value;
+        
+        if(id_pessoa == ""){
+          alert('Preencha o campo pessoa.');
+          editarRegistro.id_pessoa_edit.focus();
+          return false;
+        }
+        
+        if(temperatura_edit == ""){
+          alert('Preencha o campo temperatura.');
+          editarRegistro.temperatura_edit.focus();
+          return false;
+        }
+      }
+
       $('#editRegistro').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget) // Button that triggered the modal
         var recipient = button.data('whatever') // Extract info from data-* attributes

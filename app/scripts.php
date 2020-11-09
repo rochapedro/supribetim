@@ -16,8 +16,8 @@ if (!isset($_SESSION['REGISTRO_URL_PROTOCOL'])) {
     $root = $_SERVER['DOCUMENT_ROOT'];
     $root = str_replace(trim(' \ '), DS, $root);
     $root = str_replace(trim(' / '), DS, $root);
-    $_SESSION['REGISTRO_URL_HTTP_BASE'] = 'http://'.$_SERVER['HTTP_HOST'].'/supribetim.com.br/';
-    $_SESSION['REGISTRO_URL_BASE'] = $root . '/supribetim.com.br/';
+    $_SESSION['REGISTRO_URL_HTTP_BASE'] = 'http://'.$_SERVER['HTTP_HOST'].'/';
+    $_SESSION['REGISTRO_URL_BASE'] = $root.'/';
     $_SESSION['REGISTRO_URL_APP']  = $_SESSION['REGISTRO_URL_BASE'] . 'app' . DS;
     $_SESSION['REGISTRO_URL_MODELS'] = $_SESSION['REGISTRO_URL_APP'] .'models'. DS;
     $_SESSION['REGISTRO_URL_CONTROLLERS'] = $_SESSION['REGISTRO_URL_APP'] . 'controllers' . DS;
@@ -91,6 +91,7 @@ function getCSSDataTables(){
 function getJsCommonFiles(){
 	echo '
 	<script src="'.$_SESSION['REGISTRO_URL_LOCATION_JS'].'/datatable/jquery-3.5.1.js"></script>
+	<script src="'.$_SESSION['REGISTRO_URL_LOCATION_JS'].'/validator/validador.min.js"></script>
 	';
 }  
 

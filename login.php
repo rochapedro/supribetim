@@ -29,10 +29,10 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
     <!-- Tabs Titles -->
 
     <!-- Login Form -->
-    <form action="app/models/Login.php" method="post">
+    <form action="app/models/Login.php" id="login" method="post">
       <input style="margin-top: 40px;" type="text" id="usuario" class="fadeIn second" name="usuario" placeholder="Usuário">
       <input type="password" id="senha" class="fadeIn third" name="senha" placeholder="Senha">
-      <input type="submit" class="fadeIn fourth" value="Log In">
+      <input type="submit" class="fadeIn fourth" onclick="return validar()" value="Log In">
     </form>
 
     <!-- Remind Passowrd 
@@ -46,7 +46,25 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
 <?php
   getJsCommonFiles();
 ?>
-
+<script>
+  // Funçao para validar os formulários
+  function validar(){
+				var usuario = login.usuario.value;
+				var senha = login.senha.value;
+				
+				if(usuario == ""){
+					alert('Preencha o campo usuario.');
+					login.usuario.focus();
+					return false;
+				}
+				
+				if(senha == ""){
+					alert('Preencha o campo senha.');
+					login.senha.focus();
+					return false;
+				}
+			}
+</script>
 </body>
 </html>
 

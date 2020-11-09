@@ -86,6 +86,24 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <script>
+      //Funçao pra validar os formulários
+      function validar(){
+				var nome_edit = editrarPessoa.nome_edit.value;
+				var id_casa_edit = editrarPessoa.id_casa_edit.value;
+				
+				if(nome_edit == ""){
+					alert('Preencha o campo nome.');
+					editrarPessoa.nome_edit.focus();
+					return false;
+				}
+				
+				if(id_casa_edit == ""){
+					alert('Preencha o campo comum.');
+					editrarPessoa.id_casa_edit.focus();
+					return false;
+				}
+			}
+
       $('#editPessoas').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget) // Button that triggered the modal
         var recipient = button.data('whatever') // Extract info from data-* attributes
