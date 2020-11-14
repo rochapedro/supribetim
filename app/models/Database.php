@@ -7,10 +7,10 @@ class Database
     
     private function __construct()
     {
-        $db_host = "192.185.215.154";
-        $db_nome = "bookom43_supribetim";
-        $db_usuario = "bookom43_mirian";
-        $db_senha = "ccb_2017";
+        $db_host = "bookom43_supribetim";
+        $db_nome = "medicao2";
+        $db_usuario = "root";
+        $db_senha = "";
         $db_driver = "mysql";
         try
         {

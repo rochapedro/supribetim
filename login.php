@@ -10,12 +10,11 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Login</title>
-  
     <?php
       getMeta();
       getCSSCommonFiles();
     ?>
+  <title><?php getAppName(); echo " | Login"; ?></title>
   <link rel="icon" type="image/x-icon" href="icons/icon.png" />
   <link rel="stylesheet" href="login.css">
 

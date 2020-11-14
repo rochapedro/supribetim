@@ -7,13 +7,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <?php
-        if(basename($_SERVER['PHP_SELF'],'.php') == 'principal'){
-          echo '<img alt="Brand" class="icone" style="width: 35px; right:35px; float:left; margin-top:12px; margin-right:2px;" src="icons/icon.png" style="float:left;"><a class="navbar-brand" href="principal.php" >SupriBetim</a>';
-        } else {
-          echo '<img alt="Brand" class="icone" style="width: 35px; right:35px; float:left; margin-top:12px; margin-right:2px;" src="../icons/icon.png" style="float:left;"><a class="navbar-brand" href="../principal.php">SupriBetim</a>';
-        }
-      ?>
+        <img alt="Brand" class="icone" style="width: 35px; right:35px; float:left; margin-top:12px; margin-right:2px;" src=" <?php echo $_SESSION['REGISTRO_URL_LOCATION_ICONS'].'/icon.png'; ?>" style="float:left;"><a class="navbar-brand" href="<?php echo $_SESSION['REGISTRO_URL_HTTP_BASE'].'principal.php'; ?>" >SupriBetim</a>';
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

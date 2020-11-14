@@ -8,7 +8,7 @@ $usuario = $_POST['usuario'];
 $senha = $_POST['senha'];
 
 
-$consulta = $pdo->query("SELECT p.*, u.*, c.casa_oracao FROM pessoa as p JOIN usuario as u ON u.id_pessoa = p.id_pessoa JOIN casas_oracao as c ON p.id_casa = c.id_casa WHERE u.usuario = '$usuario' AND u.senha = $senha;");
+$consulta = $pdo->query("SELECT p.*, u.*, c.casa_oracao FROM pessoa as p JOIN usuario as u ON u.id_pessoa = p.id_pessoa JOIN casas_oracao as c ON p.id_casa = c.id_casa WHERE u.usuario = '$usuario' AND u.senha = '$senha';");
 
  $count = $consulta->rowCount();
 

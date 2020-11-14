@@ -16,8 +16,8 @@ if (!isset($_SESSION['REGISTRO_URL_PROTOCOL'])) {
     $root = $_SERVER['DOCUMENT_ROOT'];
     $root = str_replace(trim(' \ '), DS, $root);
     $root = str_replace(trim(' / '), DS, $root);
-    $_SESSION['REGISTRO_URL_HTTP_BASE'] = 'http://'.$_SERVER['HTTP_HOST'].'/';
-    $_SESSION['REGISTRO_URL_BASE'] = $root.'/';
+    $_SESSION['REGISTRO_URL_HTTP_BASE'] = 'http://'.$_SERVER['HTTP_HOST'].'/supribetim/';
+    $_SESSION['REGISTRO_URL_BASE'] = $root.'/supribetim/';
     $_SESSION['REGISTRO_URL_APP']  = $_SESSION['REGISTRO_URL_BASE'] . 'app' . DS;
     $_SESSION['REGISTRO_URL_MODELS'] = $_SESSION['REGISTRO_URL_APP'] .'models'. DS;
     $_SESSION['REGISTRO_URL_CONTROLLERS'] = $_SESSION['REGISTRO_URL_APP'] . 'controllers' . DS;
@@ -28,6 +28,7 @@ if (!isset($_SESSION['REGISTRO_URL_PROTOCOL'])) {
 	$_SESSION['REGISTRO_URL_MODALS']  = $_SESSION['REGISTRO_URL_BASE'] . 'modals' . DS;
 	$_SESSION['REGISTRO_URL_MENUS']  = $_SESSION['REGISTRO_URL_BASE'] . 'menus' . DS;
 	$_SESSION['REGISTRO_URL_ICONS']  = $_SESSION['REGISTRO_URL_BASE'] . 'icons' . DS;
+	$_SESSION['REGISTRO_URL_INCLUDES']  = $_SESSION['REGISTRO_URL_BASE'] . 'includes' . DS;
 
     /* INCLUDE */
 	$_SESSION['REGISTRO_URL_INCLUDES'] = $_SESSION['REGISTRO_URL_BASE'] . 'includes' . DS;
@@ -46,6 +47,7 @@ if (!isset($_SESSION['REGISTRO_URL_PROTOCOL'])) {
 	$_SESSION['REGISTRO_URL_LOCATION_ASSETS'] = $_SESSION['REGISTRO_URL_HTTP_BASE'] . 'assets';
 	$_SESSION['REGISTRO_URL_LOCATION_JQUERY'] = $_SESSION['REGISTRO_URL_HTTP_BASE'] . 'jquery';
 	$_SESSION['REGISTRO_URL_LOCATION_MODALS'] = $_SESSION['REGISTRO_URL_HTTP_BASE'] . 'modals';
+	$_SESSION['REGISTRO_URL_LOCATION_ICONS'] = $_SESSION['REGISTRO_URL_HTTP_BASE'] . 'icons';
 }
 
 function getAppName(){
@@ -53,7 +55,7 @@ function getAppName(){
 }
 
 function getIcon(){
-	echo '<link rel="icon" type="image/x-icon" href="../icons/icon.png" />';
+	echo '<link rel="icon" type="image/x-icon" href="'.$_SESSION['REGISTRO_URL_LOCATION_ICONS'].'/icon.png" />';
 }
 
 
@@ -84,6 +86,12 @@ function getCSSDataTables(){
 
 	<link href="'.$_SESSION['REGISTRO_URL_LOCATION_CSS'].'/datatable/buttons.bootstrap4.css" rel="stylesheet"/>
 
+	';
+}
+
+function getCSSSidebar(){
+	echo '
+	<link href="'.$_SESSION['REGISTRO_URL_LOCATION_CSS'].'/sidebar/sidebar.css" rel="stylesheet"/>
 	';
 }
 

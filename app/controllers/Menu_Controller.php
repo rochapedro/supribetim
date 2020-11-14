@@ -27,7 +27,7 @@ class MenusController {
                     <div class="col-sm-6">
                         <div class="panel panel-primary">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><img alt="Brand" src="icons/edit.png" style="width: 30px; right:30px; float:left; margin-top:-6px; margin-right:5px;">'.$row->nome.'</h3>
+                                <h3 class="panel-title"><img alt="Brand" src="'.$row->icon.'" style="width: 30px; right:30px; float:left; margin-top:-6px; margin-right:5px;">'.$row->nome.'</h3>
                             </div>
                             <div class="panel-body">
                                 <p class="panel-text">'.$row->descricao.'</p>
