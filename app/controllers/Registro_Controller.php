@@ -65,7 +65,7 @@ class RegistrosController {
         $classe->id_usuario = $_POST['id_usuario'];
 
         if($classe->cadastrarRegistro()){
-            header('Location: ../../view/index.php');
+            header('Location: ../../view/afericao/index.php');
             exit;
         }else{
             echo "Erro ao inserir os dados, tente novamente mais tarde.";
@@ -82,7 +82,7 @@ class RegistrosController {
         $editar->temperatura = $_POST['temperatura_edit'];
 
     if($editar->editarRegistros()){
-            header('Location: ../../view/index.php');
+            header('Location: ../../view/afericao/index.php');
             exit;
         }else{
             echo "Erro ao inserir os dados, tente novamente mais tarde.";

@@ -79,7 +79,7 @@ class PessoasController {
         $classe->id_usuario = $_POST['id_usuario'];
 
         if($classe->cadastrarPessoa()){
-            header('Location: ../../view/cadastro.php');
+            header('Location: ../../view/afericao/cadastro.php');
             exit;
         }else{
             echo "Erro ao inserir os dados, tente novamente mais tarde.";
@@ -108,7 +108,7 @@ class PessoasController {
  
 
     if($editar->editarPessoas()){
-            header('Location: ../../view/pessoas.php');
+            header('Location: ../../view/afericao/pessoas.php');
             exit;
         }else{
             echo "Erro ao inserir os dados, tente novamente mais tarde.";

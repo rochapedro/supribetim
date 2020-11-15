@@ -5,8 +5,8 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
 }
 
   // Chamo as dependências da página
-  require_once ('../app/session.php');  
-  require_once ('../app/scripts.php');
+  require_once ($_SESSION['REGISTRO_URL_APP'].'/session.php');  
+  require_once ($_SESSION['REGISTRO_URL_APP'].'/scripts.php');
   require_once ($_SESSION['REGISTRO_URL_CONTROLLERS'].'Casa_Controller.php');
   require_once ($_SESSION['REGISTRO_URL_CONTROLLERS'].'Pessoa_Controller.php'); 
 
@@ -43,7 +43,7 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
   <body>
     
     <?php 
-      require_once ('../includes/navbar/navbar.php');
+      require_once ($_SESSION['REGISTRO_URL_INCLUDES'].'/navbar/navbar.php');
     ?>
 
     <div class="container" style="margin-top: 60px;">

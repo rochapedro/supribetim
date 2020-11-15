@@ -16,8 +16,8 @@ if (!isset($_SESSION['REGISTRO_URL_PROTOCOL'])) {
     $root = $_SERVER['DOCUMENT_ROOT'];
     $root = str_replace(trim(' \ '), DS, $root);
     $root = str_replace(trim(' / '), DS, $root);
-    $_SESSION['REGISTRO_URL_HTTP_BASE'] = 'http://'.$_SERVER['HTTP_HOST'].'/supribetim/';
-    $_SESSION['REGISTRO_URL_BASE'] = $root.'/supribetim/';
+    $_SESSION['REGISTRO_URL_HTTP_BASE'] = 'http://'.$_SERVER['HTTP_HOST'].'/';
+    $_SESSION['REGISTRO_URL_BASE'] = $root.'/';
     $_SESSION['REGISTRO_URL_APP']  = $_SESSION['REGISTRO_URL_BASE'] . 'app' . DS;
     $_SESSION['REGISTRO_URL_MODELS'] = $_SESSION['REGISTRO_URL_APP'] .'models'. DS;
     $_SESSION['REGISTRO_URL_CONTROLLERS'] = $_SESSION['REGISTRO_URL_APP'] . 'controllers' . DS;

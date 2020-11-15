@@ -20,7 +20,7 @@
             <li><a href="index.php">Registros</a></li>
             <li><a href="cadastro.php">Cadastros</a></li>
             <li><a href="pessoas.php">Pessoas</a></li>
-            <li><a href="../app/destroy.php">Sair</a></li>
+            <li><a href="../../app/destroy.php">Sair</a></li>
             ';
           }
         ?>

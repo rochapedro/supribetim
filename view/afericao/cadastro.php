@@ -4,8 +4,8 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
   session_start();
 }
   // Chamo todas as dependências relacionadas a página
-  require_once ('../app/session.php');
-  require_once ('../app/scripts.php');
+  require_once ($_SESSION['REGISTRO_URL_APP'].'/session.php');  
+  require_once ($_SESSION['REGISTRO_URL_APP'].'/scripts.php');
   require_once ($_SESSION['REGISTRO_URL_CONTROLLERS'].'Casa_Controller.php');
 
 ?>
@@ -24,7 +24,7 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
   <body>
     <!-- Chamo a navbar -->
     <?php 
-      require_once ('../includes/navbar/navbar.php');
+      require_once ($_SESSION['REGISTRO_URL_INCLUDES'].'/navbar/navbar.php');
     ?>
 
     <div class="container" style="margin-top: 60px;">
