@@ -46,8 +46,28 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
       }
 
       .filtrar {
-        margin-top: 17px;
+        margin-top: 18px;
       }
+
+    <?php 
+      if(isset($_REQUEST['filter'])){
+        echo '
+          #escondido{
+            display:block;
+          }
+          #filtrar{
+            display:none;
+          }
+        ';
+      } else {
+        echo '
+          #escondido{
+            display:none;
+          }
+        ';
+      } 
+    ?>
+     
 
       @media only screen and (max-width: 1000px) {
         .limpar {
@@ -90,18 +110,26 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
           </h3>
         </div><!-- /panel heading -->
         <div class="panel-body">
-          <h5 style="margin-left: 15px;" class="panel-title">Filtros</h5>
-          <form method="GET" id="filtro" action="index.php" enctype="multipart/form-data">
-            <div class="form-row">
-              <!-- Chamo os filros para o datatable mediante as permissões do usuário -->
-              <?php 
-                require_once ($_SESSION['REGISTRO_URL_INCLUDES'].'/menus/filtros.php')
-              ?>
+          <div id="escondido" class="panel panel-primary">
+            <div class="panel-heading">
+              <div class="close">X</div>
+              <h5 style="margin-left: 15px;" class="panel-title">Filtros</h5>
             </div>
-          </form>
+            <div class="panel-body">
+              <form method="GET" id="filtro" action="index.php" enctype="multipart/form-data">
+                <div class="form-row">
+                  <!-- Chamo os filros para o datatable mediante as permissões do usuário -->
+                  <?php 
+                    require_once ($_SESSION['REGISTRO_URL_INCLUDES'].'/menus/filtros.php')
+                  ?>
+                </div>
+              </form>
+            </div>
+          </div>
           <div class="col-md-12 novo">
+            <button id="filtrar" class="btn btn-primary"><i class="fas fa-filter"></i> Filtrar</button>
             <a style="float: right;" class="rounded js-scroll-trigger botao" href="cadastro.php"><button type="button" class="btn btn-warning">Cadastrar</button></a></li>       
-            <button style="float: right; margin-right:2px" type="button" class="btn btn-primary botao" data-toggle="modal" data-target="#cadRegistro">Novo</button>
+            <button style="float: right; margin-right:4px" type="button" class="btn btn-primary botao" data-toggle="modal" data-target="#cadRegistro">Novo</button>
           </div>
           <div class="col-md-12 table-responsive" style="margin-top: 10px;">
             <table id="tableRegistros" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%">
@@ -246,6 +274,17 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
               }
           });
       });
+
+      $( "#filtrar" ).click(function() {
+        $("#escondido").fadeIn().css("display","block");
+        $( "#filtrar").css("display", "none");
+      });
+
+      $('.close').click(function(event){
+        $('#escondido').css("display","none");
+        event.preventDefault();
+        $( "#filtrar").fadeIn().css("display","block");
+    });
 
       
     </script>
