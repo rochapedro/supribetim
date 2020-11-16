@@ -21,6 +21,9 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
       getCSSSelectpiker();
     ?>
     <title><?php getAppName(); echo " | Cadastro"; ?></title>
+    <link rel="manifest" href="../../manifest.json" />
+		<script src="../../pwa.dev.min.js"></script>
+		<script> if (navigator.serviceWorker) { navigator.serviceWorker.register ('../../sw.js') } </script>
   </head>
   <body>
     <!-- Chamo a navbar -->
