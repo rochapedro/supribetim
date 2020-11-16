@@ -5,7 +5,7 @@
         echo '
             <div class="form-group col-md-3">
                 <label for="validationCustom05">Comum</label>
-                <select class="selectpicker form-control" data-show-subtext="true" data-live-search="true" name="id_casa" id="id_casa" >
+                <select class="selectpicker form-control" data-show-subtext="true" data-live-search="true" name="id_casa" id="id_casa">
                     <option value="">Selecione uma comum</option>
                     
                       '; echo CasasController::getOptionsCasas(); echo'

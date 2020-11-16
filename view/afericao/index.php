@@ -55,9 +55,6 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
           #escondido{
             display:block;
           }
-          #filtrar{
-            display:none;
-          }
         ';
       } else {
         echo '
@@ -89,6 +86,8 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
         }
       }
   </style>
+  
+    <link rel="stylesheet" href="../../css/select/bootstrap-select.css" />
   </head>
   <body>
     <!-- Chamo a navbar -->
@@ -127,7 +126,7 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
             </div>
           </div>
           <div class="col-md-12 novo">
-            <button id="filtrar" class="btn btn-primary"><i class="fas fa-filter"></i> Filtrar</button>
+            <button id="filtrar" class="btn btn-primary"><i class="fas fa-filter"></i> Filtros</button>
             <a style="float: right;" class="rounded js-scroll-trigger botao" href="cadastro.php"><button type="button" class="btn btn-warning">Cadastrar</button></a></li>       
             <button style="float: right; margin-right:4px" type="button" class="btn btn-primary botao" data-toggle="modal" data-target="#cadRegistro">Novo</button>
           </div>
@@ -163,7 +162,9 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
       require_once ($_SESSION['REGISTRO_URL_MODALS'].'editRegistro.php');
     ?>
     
-  
+   
+ 
+  <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js"></script> 
   <!-- Importando o js do bootstrap -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     
@@ -275,15 +276,17 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
           });
       });
 
+
+      // Função para exibir e fechar painel de filtros
       $( "#filtrar" ).click(function() {
         $("#escondido").fadeIn().css("display","block");
-        $( "#filtrar").css("display", "none");
+        //$( "#filtrar").css("display", "none");
       });
 
       $('.close').click(function(event){
         $('#escondido').css("display","none");
         event.preventDefault();
-        $( "#filtrar").fadeIn().css("display","block");
+        //$( "#filtrar").fadeIn().css("display","block");
     });
 
       
