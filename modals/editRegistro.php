@@ -12,7 +12,7 @@
             <div class="form-group col-md-9">
               <label for="validationCustom05">Nome</label>
               <input type="hidden" class="form-control" name="id_movimento_edit" id="id_movimento_edit">
-                <select class="selectpicker form-control" style="border-color:brown" data-live-search="true" name="id_pessoa_edit" id="id_pessoa_edit">
+                <select class="selectpicker form-control" data-show-subtext="true" data-live-search="true" name="id_pessoa_edit" id="id_pessoa_edit">
                   <option value="">Selecione um nome</option>
                     <?php
                       echo PessoasController::getOptionsPessoas();

@@ -38,6 +38,7 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
       // Chamo as dependências de CSS da página
       getCSSCommonFiles();
       getCSSDataTables();
+      getCSSSelectpiker();
     ?>
     <title><?php getAppName(); echo " | Registros"; ?></title>
     <style>
@@ -86,8 +87,6 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
         }
       }
   </style>
-  
-    <link rel="stylesheet" href="../../css/select/bootstrap-select.css" />
   </head>
   <body>
     <!-- Chamo a navbar -->
@@ -157,16 +156,11 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
       // Chamo as dependências de JavaScript da página
       getJsCommonFiles();
       getJsDataTables();
+      getJsSelectpiker();
       //Chamo os modais responsáveis por cadastrar e editar os registros
       require_once ($_SESSION['REGISTRO_URL_MODALS'].'cadRegistro.php');
       require_once ($_SESSION['REGISTRO_URL_MODALS'].'editRegistro.php');
     ?>
-    
-   
- 
-  <script src="../../js/select/bootstrap-select.min.js"></script> 
-  <!-- Importando o js do bootstrap -->
-  <script src="../../js/bootstrap/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     
     <script type="text/javascript">
       // Funçao para validar os formulários
@@ -212,7 +206,8 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
         var recipienttemperatura = button.data('whatevertemperatura')
         var recipientid_movimento = button.data('whateverid_movimento')
         
-       // $('#id_localidade option[value="' + recipientid_localidade + '"]').prop('selected', true);
+        console.log('entrou');
+        $('#id_pessoa_edit option[value="' + recipient + '"]').prop('selected', true);
 
         // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
         var modal = $(this)

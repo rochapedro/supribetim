@@ -77,6 +77,12 @@ function getCSSCommonFiles(){
 	';
 }
 
+function getCSSSelectpiker(){
+	echo '
+	  <link href="'.$_SESSION['REGISTRO_URL_LOCATION_CSS'].'/select/bootstrap-select.css" rel="stylesheet" type="text/css" />  
+	';
+}
+
 
 function getCSSDataTables(){
 	echo '
@@ -100,6 +106,8 @@ function getJsCommonFiles(){
 	echo '
 	<script src="'.$_SESSION['REGISTRO_URL_LOCATION_JS'].'/datatable/jquery-3.5.1.js"></script>
 	<script src="'.$_SESSION['REGISTRO_URL_LOCATION_JS'].'/validator/validador.min.js"></script>
+	<script src="'.$_SESSION['REGISTRO_URL_LOCATION_JS'].'/bootstrap/bootstrap.min.js"></script>
+	
 	';
 }  
 
@@ -124,11 +132,16 @@ function getJsDataTables(){
 	';
 }
 
+function getJsSelectpiker(){
+	echo '
+	<script src="'.$_SESSION['REGISTRO_URL_LOCATION_JS'].'/select/bootstrap-select.min.js"></script>
+	';
+}
+
 function getJqueryMask(){
 	echo '
 	<script src="'.$_SESSION['REGISTRO_URL_LOCATION_JS'].'/jquery/jquery.mask.min.js"></script>
 	';
 }
 
-
-	
+  

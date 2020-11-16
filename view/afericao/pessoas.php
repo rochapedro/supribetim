@@ -21,6 +21,7 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
       // Chamo as dependências de CSS da página
       getCSSCommonFiles();
       getCSSDataTables();
+      getCSSSelectpiker();
     ?>
 
     <title><?php getAppName(); echo " | Pessoas"; ?></title>
@@ -80,11 +81,9 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
       require_once($_SESSION['REGISTRO_URL_MODALS'].'editPessoa.php');
       getJsCommonFiles();
       getJsDataTables();
+      getJsSelectpiker();
     ?>
-
-    <!-- Importando o js do bootstrap -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+    
     <script>
       //Funçao pra validar os formulários
       function validar(){

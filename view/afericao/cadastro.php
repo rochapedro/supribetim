@@ -18,6 +18,7 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
       getIcon();
       // Chamo as dependências de CSS da página
       getCSSCommonFiles();
+      getCSSSelectpiker();
     ?>
     <title><?php getAppName(); echo " | Cadastro"; ?></title>
   </head>
@@ -36,32 +37,32 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
                 <div class="form-group col-md-9">
                     <label for="validationNome">Nome</label>
                     <input type="hidden" name="id_usuario" id="inputWarning1" value="<?php echo $_SESSION['id_usuario']; ?>" class="form-control">
-                    <input type="text" name="nome" class="form-control">
+                    <input type="text" name="nome" id="nome" class="form-control">
                 </div>
                 <div class="form-group col-md-3">
                     <label for="validationTelefone">Telefone</label>
-                    <input type="text" name="telefone" id="validationCustom02" class="telefone form-control">
+                    <input type="text" name="telefone" id="telefone" class="telefone form-control">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="validationRua">Rua</label>
-                    <input type="text" name="rua" id="validationCustom03" class="form-control">
+                    <input type="text" name="rua" id="rua" class="form-control">
                 </div>
                 <div class="form-group col-md-2">
                     <label for="validaNúmero">Número</label>
-                    <input type="text" name="numero" id="validationCustom04" class="form-control">
+                    <input type="text" name="numero" id="numero" class="form-control">
                 </div>
                 <div class="form-group col-md-4">
                     <label for="validationBairro">Bairro</label>
-                    <input type="text" name="bairro" id="validationCustom05" class="form-control">
+                    <input type="text" name="bairro" id="bairro" class="form-control">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="validationCidade">Cidade</label>
-                    <input type="text" name="cidade" id="validationCustom06" class="form-control">
+                    <input type="text" name="cidade" id="cidade" class="form-control">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="validationComum">Comum</label>
-                    <select class="form-control" name="id_casa" data-container="body" data-live-search="true" data-hide-disabled="true" id="validationCustom07" >
-                        <option value="">Selecione uma comum</option>
+                    <select class="selectpicker form-control" data-show-subtext="true" data-live-search="true" name="id_casa" id="validationCustom07">
+                    <option value="">Selecione uma comum</option>
                         <?php
                             echo CasasController::getOptionsCasas();
                         ?>
@@ -69,8 +70,7 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
                 </div>
               </div><!-- /form row -->
               <div class="col-md-12">
-                <button style="float: right;" type="submit" class="btn btn-danger">Cancelar</button>
-                <button style="padding-right: 30px; padding-left: 30px; float:right; margin-right:5px;" type="submit" onclick="return validar()" class="btn btn-primary">Cadastrar</button>
+                <button style="float:right;" type="submit" onclick="return validar()" class="btn btn-primary">Cadastrar</button>
               </div>
             </form>
         </div><!-- /panel body -->
@@ -82,10 +82,8 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
       getJsCommonFiles();
       getJsDataTables();
       getJqueryMask();
+      getJsSelectpiker();
     ?>
-
-    <!-- Importando o js do bootstrap -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <script type="text/javascript">
     //Funçao pra validar os formulários
@@ -124,6 +122,12 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
               }
           });
       });
+
+      function limpar() {
+        if(document.getElementById('nome').value!="") {
+        document.getElementById('nome').value="";
+        }
+        }
     </script>
   
   </body>
