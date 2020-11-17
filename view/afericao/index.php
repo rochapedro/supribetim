@@ -208,9 +208,11 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
         var recipient = button.data('whatever')
         var recipienttemperatura = button.data('whatevertemperatura')
         var recipientid_movimento = button.data('whateverid_movimento')
+
+        $('#id_pessoa_edit').val(recipient); // Select the option with a value of '1'
+        $('#id_pessoa_edit').trigger('change');
         
-        console.log('entrou');
-        $('#id_pessoa_edit option[value="' + recipient + '"]').prop('selected', true);
+        //$('#id_pessoa_edit option[value="' + recipient + '"]').prop('selected', true);
 
         // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
         var modal = $(this)

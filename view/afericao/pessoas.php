@@ -120,6 +120,8 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
         var recipientid_casa = button.data('whateverid_casa')
         var recipientid_usuario = button.data('whateverid_usuario')
         
+        $('#id_casa_edit').val(recipientid_casa); // Select the option with a value of '1'
+        $('#id_casa_edit').trigger('change');
        // $('#id_localidade option[value="' + recipientid_localidade + '"]').prop('selected', true);
 
         // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
@@ -137,7 +139,13 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
 
       // Função do datatable
       $(document).ready(function() {
+          
+          const screenWidth = window.innerWidth;
+          const maxWidth = 400;
+          const paginationType = screenWidth > maxWidth ? 'simple_numbers' : 'simple';
+        
           var table = $('#tablePessoas').DataTable( {
+              "pagingType": paginationType,
               lengthChange: false,
               buttons: [ 'excel', 'pdf' ],
               "language": {

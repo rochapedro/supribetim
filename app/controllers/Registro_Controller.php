@@ -44,7 +44,7 @@ class RegistrosController {
                     <td>'.$row->temperatura.'</td>
                     <td width="9%">
                     <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editRegistro" 
-                    data-whatever="'.$row->nome.'" 
+                    data-whatever="'.$row->id_pessoa.'" 
                     data-whatevertemperatura="'.$row->temperatura.'"
                     data-whateverid_movimento="'.$row->id_movimento.'"
                     ><i class="fa fa-edit"></i></button>
