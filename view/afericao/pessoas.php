@@ -51,7 +51,7 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
     <div class="container" style="margin-top: 60px;">
       <div class="panel panel-primary" style="margin-bottom: 20px;">
         <div class="panel-body">
-          <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Pessoas Cadastradas</h2>
+          <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0" style="margin-bottom: 50px;">Pessoas Cadastradas</h2>
           <div class="col-md-12 table-responsive">
             <table id="tablePessoas" cellspacing="0" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%;">
               <thead>
@@ -134,13 +134,18 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
 
       // Função do datatable
       $(document).ready(function() {
-          
-          const screenWidth = window.innerWidth;
-          const maxWidth = 400;
-          const paginationType = screenWidth > maxWidth ? 'simple_numbers' : 'simple';
-        
+
+        const screenWidth = window.innerWidth;
+        const maxWidth = 400;
+        const paginationType = screenWidth > maxWidth ? 'simple_numbers' : 'simple';
+        const exportExcel = screenWidth > maxWidth ? 'Exportar para Excel' : 'Exportar Excel';
+        const exportPdf = screenWidth > maxWidth ? 'Exportar para PDF' : 'Exportar PDF';
+        const titleModalcadRegistro = screenWidth > maxWidth ? 'Cadastrar novo registro de temperatura' : 'Novo Registro';
+
+        $('#titulo_modal_cadastrar').text(titleModalcadRegistro);
+
           var table = $('#tablePessoas').DataTable( {
-              "pagingType": paginationType,
+            "pagingType": paginationType,
               lengthChange: false,
               buttons: [ 'excel', 'pdf' ],
               "language": {
@@ -153,6 +158,10 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
                 "processing":     "Buscando...",
                 "search":         "",
                 "searchPlaceholder": "Buscar",
+                "buttons": {
+                  "excel": exportExcel,
+                  "pdf": exportPdf,
+                },
                 "paginate": {
                   "first":      'Primeira',
                   "last":       "Última",
@@ -161,10 +170,10 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
                 }
               }
           } );
-      
+
           table.buttons().container()
-              .appendTo( '#tablePessoas .col-md-6:eq(0)' );
-      } );
+              .appendTo( '#tablePessoas_wrapper .col-md-6:eq(0)' );
+        } );
 
       // Função de deletar pessoas via ajax
       function delPessoa(id){

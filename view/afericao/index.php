@@ -230,7 +230,7 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
         modal.find('#id_movimento_edit').val(recipientid_movimento)
         })
 
-      
+      // Função do datatable
       $(document).ready(function() {
 
         const screenWidth = window.innerWidth;
