@@ -9,7 +9,7 @@
     ],
     "display": "standalone",
     "scope": "/",
-    "start_url": "./?homescreen=false",
+    "start_url": "./?homescreen=true",
     "orientation": "portrait",
     "theme_color": "#232d53",
     "background_color": "#2c3e50"

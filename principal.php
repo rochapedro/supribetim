@@ -16,12 +16,10 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
     <?php
       getMeta();
       getCSSCommonFiles();
+      getPWA();
     ?>
     <link rel="icon" type="image/x-icon" href="icons/icon.png" />
     <title><?php getAppName(); ?></title>
-    <link rel="manifest" href="./manifest.json" />
-		<script src="./pwa.dev.min.js"></script>
-		<script> if (navigator.serviceWorker) { navigator.serviceWorker.register ('./sw.js') } </script>
   </head>
   <body>
     

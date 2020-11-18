@@ -39,18 +39,22 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
       getCSSCommonFiles();
       getCSSDataTables();
       getCSSSelectpiker();
+      getPWA();
     ?>
     <title><?php getAppName(); echo " | Registros"; ?></title>
-    <link rel="manifest" href="../../manifest.json" />
-		<script src="../../pwa.dev.min.js"></script>
-		<script> if (navigator.serviceWorker) { navigator.serviceWorker.register ('../../sw.js') } </script>
     <style>
       .limpar {
         margin-top: 18px;
+        float: right;
       }
 
       .filtrar {
         margin-top: 18px;
+        float: right;
+      }
+
+      .filtros {
+        float: right;
       }
 
     <?php 
@@ -77,7 +81,10 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
 
         .filtrar {
           margin-top: -4px;
-          margin-right: 0px;
+        }
+
+        .filtros {
+          float: left;
         }
 
         .novo {
@@ -86,7 +93,8 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
         }
 
         .botao {
-          float: right;
+          float: left;
+          margin-right: 3px;
         }
       }
   </style>
@@ -98,6 +106,28 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
     ?>
 
     <div class="container" style="margin-top: 60px;">
+      <div id="escondido" class="panel panel-success">
+        <div class="panel-heading">
+          <div class="close">X</div>
+          <h5 style="margin-left: 15px;" class="panel-title">Filtros</h5>
+        </div>
+        <div class="panel-body">
+          <form method="GET" id="filtro" action="index.php" enctype="multipart/form-data">
+            <div class="form-row">
+              <!-- Chamo os filros para o datatable mediante as permissões do usuário -->
+              <?php 
+                require_once ($_SESSION['REGISTRO_URL_INCLUDES'].'/menus/filtros.php')
+              ?>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 5px;">
+        <button type="button" class="btn btn-primary botao" data-toggle="modal" data-target="#cadRegistro" title="Cadastrar um novo registro de temperatura"><i class="fas fa-file"></i> Novo Registro</button>
+        <button id="filtrar" class="btn btn-success" title="Exibir as opções de filtros da tabela"><i class="fas fa-filter"></i> Exibir Filtros</button>       
+      </div>
+
       <div class="panel panel-primary">
         <div class="panel-heading">
           <h3 class="panel-title">
@@ -111,27 +141,6 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
           </h3>
         </div><!-- /panel heading -->
         <div class="panel-body">
-          <div id="escondido" class="panel panel-primary">
-            <div class="panel-heading">
-              <div class="close">X</div>
-              <h5 style="margin-left: 15px;" class="panel-title">Filtros</h5>
-            </div>
-            <div class="panel-body">
-              <form method="GET" id="filtro" action="index.php" enctype="multipart/form-data">
-                <div class="form-row">
-                  <!-- Chamo os filros para o datatable mediante as permissões do usuário -->
-                  <?php 
-                    require_once ($_SESSION['REGISTRO_URL_INCLUDES'].'/menus/filtros.php')
-                  ?>
-                </div>
-              </form>
-            </div>
-          </div>
-          <div class="col-md-12 novo">
-            <button id="filtrar" class="btn btn-primary"><i class="fas fa-filter"></i> Filtros</button>
-            <a style="float: right;" class="rounded js-scroll-trigger botao" href="cadastro.php"><button type="button" class="btn btn-warning">Cadastrar</button></a></li>       
-            <button style="float: right; margin-right:4px" type="button" class="btn btn-primary botao" data-toggle="modal" data-target="#cadRegistro">Novo</button>
-          </div>
           <div class="col-md-12 table-responsive" style="margin-top: 10px;">
             <table id="tableRegistros" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%">
               <thead>
@@ -221,9 +230,20 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
         modal.find('#id_movimento_edit').val(recipientid_movimento)
         })
 
-      // Função do datatable
+      
       $(document).ready(function() {
+
+        const screenWidth = window.innerWidth;
+        const maxWidth = 400;
+        const paginationType = screenWidth > maxWidth ? 'simple_numbers' : 'simple';
+        const exportExcel = screenWidth > maxWidth ? 'Exportar para Excel' : 'Exportar Excel';
+        const exportPdf = screenWidth > maxWidth ? 'Exportar para PDF' : 'Exportar PDF';
+        const titleModalcadRegistro = screenWidth > maxWidth ? 'Cadastrar novo registro de temperatura' : 'Novo Registro';
+
+        $('#titulo_modal_cadastrar').text(titleModalcadRegistro);
+        
           var table = $('#tableRegistros').DataTable( {
+            "pagingType": paginationType,
               lengthChange: false,
               buttons: [ 'excel', 'pdf' ],
               "language": {
@@ -236,6 +256,10 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
                 "processing":     "Buscando...",
                 "search":         "",
                 "searchPlaceholder": "Buscar",
+                "buttons": {
+                  "excel": exportExcel,
+                  "pdf": exportPdf,
+                },
                 "paginate": {
                   "first":      'Primeira',
                   "last":       "Última",

@@ -22,12 +22,10 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
       getCSSCommonFiles();
       getCSSDataTables();
       getCSSSelectpiker();
+      getPWA();
     ?>
 
     <title><?php getAppName(); echo " | Pessoas"; ?></title>
-    <link rel="manifest" href="../../manifest.json" />
-		<script src="../../pwa.dev.min.js"></script>
-		<script> if (navigator.serviceWorker) { navigator.serviceWorker.register ('../../sw.js') } </script>
     <style>
       .novo {
         margin-bottom: 10px;
@@ -53,10 +51,7 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
     <div class="container" style="margin-top: 60px;">
       <div class="panel panel-primary" style="margin-bottom: 20px;">
         <div class="panel-body">
-          <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Pessoas</h2>
-          <div class="col-md-12 novo">      
-            <a href="cadastro.php"><button style="float: right; margin-right:3px" type="button" class="btn btn-primary">Novo</button></a>
-          </div>
+          <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Pessoas Cadastradas</h2>
           <div class="col-md-12 table-responsive">
             <table id="tablePessoas" cellspacing="0" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%;">
               <thead>

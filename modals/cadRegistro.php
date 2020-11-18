@@ -4,7 +4,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Registro de Temperatura</h4>
+        <h4 class="modal-title" id="titulo_modal_cadastrar"></h4>
       </div>
       <div class="modal-body">
         <form method="POST" style="margin-bottom: 10rem;" id="cadastrarRegistro" action="<?php echo $_SESSION['REGISTRO_URL_LOCATION_CONTROLLERS'].'/'.'Registro_Controller.php?funcao=cadastrarRegistro' ?>" enctype="multipart/form-data">

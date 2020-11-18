@@ -21,9 +21,9 @@
                 <label for="inputName">Data Final</label>                
                 <input class="form-control" type="date"  id="data_final" name="data_final">    
             </div>
-            <div class="col-md-3">
-                <a href="index.php" class="btn btn-warning limpar" style="float:right;">Limpar</a>
-                <button type="submit" class="btn btn-primary filtrar" style="float:right; margin-right:3px">Filtrar</button>  
+            <div class="col-md-3 filtros">
+                <a href="index.php" class="btn btn-success limpar">Limpar</a>
+                <button type="submit" class="btn btn-primary filtrar" style="margin-right:2px">Filtrar</button>  
             </div>
         ';
     } else {
@@ -37,9 +37,9 @@
                 <label for="inputName">Data Final</label>                
                 <input class="form-control" type="date"  id="data_final" name="data_final">    
             </div>
-            <div class="col-md-2" style="float:right;">
-                <button type="submit" class="btn btn-primary filtrar">Filtrar</button> 
-                <a href="index.php" class="btn btn-warning limpar">Limpar</a>  
+            <div class="col-md-2 filtros">
+                <button type="submit" class="btn btn-success filtrar">Filtrar</button> 
+                <a href="index.php" class="btn btn-primary limpar">Limpar</a>  
             </div>
         ';
     }

@@ -19,11 +19,9 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
       // Chamo as dependências de CSS da página
       getCSSCommonFiles();
       getCSSSelectpiker();
+      getPWA();
     ?>
     <title><?php getAppName(); echo " | Cadastro"; ?></title>
-    <link rel="manifest" href="../../manifest.json" />
-		<script src="../../pwa.dev.min.js"></script>
-		<script> if (navigator.serviceWorker) { navigator.serviceWorker.register ('../../sw.js') } </script>
   </head>
   <body>
     <!-- Chamo a navbar -->
@@ -34,7 +32,7 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
     <div class="container" style="margin-top: 60px;">
       <div class="panel panel-primary">
         <div class="panel-body">
-            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Cadastro</h2>
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Cadastrar Pessoas</h2>
             <form style="margin-top: 30px;" method="POST" id="cadastrar" action="<?php echo $_SESSION['REGISTRO_URL_LOCATION_CONTROLLERS'].'/'.'Pessoa_Controller.php?funcao=cadastrarPessoa' ?>" enctype="multipart/form-data">
               <div class="form-row">
                 <div class="form-group col-md-9">

@@ -31,7 +31,7 @@ class MenusController {
                             </div>
                             <div class="panel-body">
                                 <p class="panel-text">'.$row->descricao.'</p>
-                                <a href="'.$row->link.'" class="btn btn-primary">'.$row->botao.'</a>
+                                <a href="'.$row->link.'" class="btn btn-primary" title="Acessar aferidor de temperatura">'.$row->botao.'</a>
                             </div>
                         </div>
                     </div>

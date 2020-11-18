@@ -7,7 +7,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-        <img alt="Brand" class="icone" style="width: 35px; right:35px; float:left; margin-top:12px; margin-right:2px;" src=" <?php echo $_SESSION['REGISTRO_URL_LOCATION_ICONS'].'/icon.png'; ?>" style="float:left;"><a class="navbar-brand" href="<?php echo $_SESSION['REGISTRO_URL_HTTP_BASE'].'principal.php'; ?>" >SupriBetim</a>';
+        <img alt="Brand" class="icone" style="width: 35px; right:35px; float:left; margin-top:12px; margin-right:2px;" src=" <?php echo $_SESSION['REGISTRO_URL_LOCATION_ICONS'].'/icon.png'; ?>" style="float:left;"><a class="navbar-brand" title="Ir para página inicial" href="<?php echo $_SESSION['REGISTRO_URL_HTTP_BASE'].'principal.php'; ?>" >SupriBetim</a>';
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -17,9 +17,9 @@
             echo '<li><a href="app/destroy.php">Sair</a></li>';
           } else {
             echo '
-            <li><a href="index.php">Registros</a></li>
-            <li><a href="cadastro.php">Cadastros</a></li>
-            <li><a href="pessoas.php">Pessoas</a></li>
+            <li><a href="index.php" title="Visualizar os registros de temperatura">Registros de Temperatura</a></li>
+            <li><a href="cadastro.php" title="Realizar um novo cadastro de pessoas">Cadastrar Pessoas</a></li>
+            <li><a href="pessoas.php" title="Visualizar as pessoas cadastradas">Visualizar Pessoas</a></li>
             <li><a href="../../app/destroy.php">Sair</a></li>
             ';
           }

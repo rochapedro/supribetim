@@ -48,6 +48,7 @@ if (!isset($_SESSION['REGISTRO_URL_PROTOCOL'])) {
 	$_SESSION['REGISTRO_URL_LOCATION_JQUERY'] = $_SESSION['REGISTRO_URL_HTTP_BASE'] . 'jquery';
 	$_SESSION['REGISTRO_URL_LOCATION_MODALS'] = $_SESSION['REGISTRO_URL_HTTP_BASE'] . 'modals';
 	$_SESSION['REGISTRO_URL_LOCATION_ICONS'] = $_SESSION['REGISTRO_URL_HTTP_BASE'] . 'icons';
+	$_SESSION['REGISTRO_URL_LOCATION_PWA'] = $_SESSION['REGISTRO_URL_HTTP_BASE'] . 'pwa';
 }
 
 function getAppName(){
@@ -144,7 +145,10 @@ function getJqueryMask(){
 	';
 }
 
-
-
-
-  
+function getPWA(){
+	echo '
+		<link rel="manifest" href="'.$_SESSION['REGISTRO_URL_HTTP_BASE'].'manifest.json" />
+		<script src="'.$_SESSION['REGISTRO_URL_HTTP_BASE'].'pwa.dev.min.js"></script>
+		<script> if (navigator.serviceWorker) { navigator.serviceWorker.register ('.$_SESSION['REGISTRO_URL_HTTP_BASE'].'sw.js'; echo ') } </script>
+	';
+}
