@@ -27,7 +27,7 @@
               <input type="hidden" value="<?php echo $_SESSION['id_usuario']; ?>" name="id_usuario">
           </div>
           <div class="form-group col-md-12">
-            <button style="float: right; margin-left: 8px;" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+            <button style="float: right; margin-left: 8px;" class="btn btn-danger" onclick="limparFormulario();" data-dismiss="modal">Cancelar</button>
             <button style="float: right;" type="submit" class="btn btn-primary" onclick="return validarRegistro()">Cadastrar</button>
           </div>
         </form>

@@ -124,7 +124,7 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
       </div>
 
       <div style="margin-bottom: 5px;">
-        <button type="button" class="btn btn-primary botao" data-toggle="modal" data-target="#cadRegistro" title="Cadastrar um novo registro de temperatura"><i class="fas fa-file"></i> Novo Registro</button>
+        <button type="button" class="btn btn-primary botao" data-toggle="modal" data-target="#cadRegistro" title="Cadastrar um novo registro de temperatura"><i class="fas fa-plus"></i> Novo Registro</button>
         <button id="filtrar" class="btn btn-success" title="Exibir as opções de filtros da tabela"><i class="fas fa-filter"></i> Exibir Filtros</button>       
       </div>
 
@@ -272,7 +272,7 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
           table.buttons().container()
               .appendTo( '#tableRegistros_wrapper .col-md-6:eq(0)' );
       } );
-      
+
       // Função de deletar registro via ajax
       function delRegistro(id){
         $.ajax({

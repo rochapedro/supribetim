@@ -58,9 +58,16 @@ class RegistrosController {
 
 
     public static function cadastrarRegistro(){
+
+         // Defino as caracteres a serem excluidos do input de temperatura, caso o usuário digite , ao inves de .
+         $search  = array(',');
+
         $classe = new Registro();
         $classe->id_pessoa = $_POST['id_pessoa'];
         $classe->temperatura = $_POST['temperatura'];
+        $temperatura = $_POST['temperatura'];
+        $temperatura = str_replace($search, '.',$temperatura); // removo da variável temperatura os caracteres de search
+        $classe->temperatura = $temperatura;
         $classe->id_casa = $_POST['id_casa'];
         $classe->id_usuario = $_POST['id_usuario'];
 
