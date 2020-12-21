@@ -13,19 +13,34 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <?php 
-          if(basename($_SERVER['PHP_SELF'],'.php') == 'principal' || dirname($_SERVER['PHP_SELF']) == '/supribetim/view/usuario'){
-            echo '<li><a href="'; echo $_SESSION['REGISTRO_URL_LOCATION_APP']. '/destroy.php'; echo '">Sair</a></li>
-                  <li><a href="view/usuario/index.php" title="Administrar usuários cadastrados">Administrar Usuários</a></li>
-            ';
+          if($_SESSION['is_admin']){
+            if(basename($_SERVER['PHP_SELF'],'.php') == 'principal' || dirname($_SERVER['PHP_SELF']) == '/supribetim/view/usuario'){
+              echo '<li><a href="'; echo $_SESSION['REGISTRO_URL_LOCATION_APP']. '/destroy.php'; echo '">Sair</a></li>
+                    <li><a href="view/usuario/index.php" title="Administrar usuários cadastrados">Administrar Usuários</a></li>
+              ';
+            } else {
+              echo '
+              <li><a href="index.php" title="Visualizar os registros de temperatura">Registros de Temperatura</a></li>
+              <li><a href="cadastro.php" title="Realizar um novo cadastro de pessoas">Cadastrar Pessoas</a></li>
+              <li><a href="pessoas.php" title="Visualizar as pessoas cadastradas">Visualizar Pessoas</a></li>
+              <li><a href="../usuario/index.php" title="Administrar usuários cadastrados">Administrar Usuários</a></li>
+              <li><a href="../../app/destroy.php">Sair</a></li>
+              ';
+            }
           } else {
-            echo '
-            <li><a href="index.php" title="Visualizar os registros de temperatura">Registros de Temperatura</a></li>
-            <li><a href="cadastro.php" title="Realizar um novo cadastro de pessoas">Cadastrar Pessoas</a></li>
-            <li><a href="pessoas.php" title="Visualizar as pessoas cadastradas">Visualizar Pessoas</a></li>
-            <li><a href="../usuario/index.php" title="Administrar usuários cadastrados">Administrar Usuários</a></li>
-            <li><a href="../../app/destroy.php">Sair</a></li>
-            ';
+            if(basename($_SERVER['PHP_SELF'],'.php') == 'principal' || dirname($_SERVER['PHP_SELF']) == '/supribetim/view/usuario'){
+              echo '<li><a href="'; echo $_SESSION['REGISTRO_URL_LOCATION_APP']. '/destroy.php'; echo '">Sair</a></li>
+              ';
+            } else {
+              echo '
+              <li><a href="index.php" title="Visualizar os registros de temperatura">Registros de Temperatura</a></li>
+              <li><a href="cadastro.php" title="Realizar um novo cadastro de pessoas">Cadastrar Pessoas</a></li>
+              <li><a href="pessoas.php" title="Visualizar as pessoas cadastradas">Visualizar Pessoas</a></li>
+              <li><a href="../../app/destroy.php">Sair</a></li>
+              ';
+            }
           }
+          
         ?>
       </ul>
     </div>
