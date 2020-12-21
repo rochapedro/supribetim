@@ -43,60 +43,21 @@ if (!isset($_SESSION['FERRAM_URL_APP'])){
     ?>
     <title><?php getAppName(); echo " | Registros"; ?></title>
     <style>
-      .limpar {
-        margin-top: 18px;
-        float: right;
-      }
-
-      .filtrar {
-        margin-top: 18px;
-        float: right;
-      }
-
-      .filtros {
-        float: right;
-      }
-
-    <?php 
-      if(isset($_REQUEST['filter'])){
-        echo '
-          #escondido{
-            display:block;
-          }
-        ';
-      } else {
-        echo '
-          #escondido{
-            display:none;
-          }
-        ';
-      } 
-    ?>
-     
-
-      @media only screen and (max-width: 1000px) {
-        .limpar {
-          margin-top: -4px;
-        }
-
-        .filtrar {
-          margin-top: -4px;
-        }
-
-        .filtros {
-          float: left;
-        }
-
-        .novo {
-          margin-top: 55px;
-          margin-bottom: 45px;
-        }
-
-        .botao {
-          float: left;
-          margin-right: 3px;
-        }
-      }
+      <?php 
+        if(isset($_REQUEST['filter'])){
+          echo '
+            #escondido{
+              display:block;
+            }
+          ';
+        } else {
+          echo '
+            #escondido{
+              display:none;
+            }
+          ';
+        } 
+      ?>
   </style>
   </head>
   <body>

@@ -1,0 +1,38 @@
+.limpar {
+    margin-top: 18px;
+    float: right;
+  }
+
+  .filtrar {
+    margin-top: 18px;
+    float: right;
+  }
+
+  .filtros {
+    float: right;
+  }
+
+
+  @media only screen and (max-width: 1000px) {
+    .limpar {
+      margin-top: -4px;
+    }
+
+    .filtrar {
+      margin-top: -4px;
+    }
+
+    .filtros {
+      float: left;
+    }
+
+    .novo {
+      margin-top: 55px;
+      margin-bottom: 45px;
+    }
+
+    .botao {
+      float: left;
+      margin-right: 3px;
+    }
+  }

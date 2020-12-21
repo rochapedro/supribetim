@@ -64,7 +64,7 @@ function getMeta(){
 	echo '
 	<meta charset="utf-8">
   	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
+	<meta name="viewport" content="width=device-width, maximum-scale=1.0, iniall-scale=1.0, minimal-ui, user-scalable=no"/>
 	';
 }
 
@@ -74,7 +74,8 @@ function getCSSCommonFiles(){
 	 
 	  <link href="'.$_SESSION['REGISTRO_URL_LOCATION_CSS'].'/bootstrap/bootstrap.css" rel="stylesheet" type="text/css" />
 	  <link href="'.$_SESSION['REGISTRO_URL_LOCATION_CSS'].'/fontawesome-free/css/all.min.css" rel="stylesheet" />
-	  <link href="'.$_SESSION['REGISTRO_URL_LOCATION_CSS'].'/fontawesome-free/css/fontawesome.min.css" rel="stylesheet" />  
+	  <link href="'.$_SESSION['REGISTRO_URL_LOCATION_CSS'].'/fontawesome-free/css/fontawesome.min.css" rel="stylesheet" /> 
+	  <link href="'.$_SESSION['REGISTRO_URL_LOCATION_CSS'].'/style/style.css" rel="stylesheet" /> 
 	';
 }
 
